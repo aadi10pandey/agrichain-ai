@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSetu AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">🌱</div>
+            <div>
+                <h1>KrishiSetu AI</h1>
+                <span>Smart Agriculture • Smarter Decisions</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#recommendation">Crop AI</a>
+            <a href="#market">Market</a>
+            <a href="#health">Crop Health</a>
+        </nav>
+
+        <button class="profile-btn">Farmer Profile</button>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="dashboard">
+
+            <div class="hero-content">
+                <span class="badge">AI-POWERED AGRICULTURAL INTELLIGENCE</span>
+
+                <h2>
+                    Grow smarter.<br>
+                    <span>Farm better.</span>
+                </h2>
+
+                <p>
+                    KrishiSetu AI converts agricultural data into
+                    simple, actionable recommendations for farmers.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#recommendation" class="primary-btn">
+                        Get Crop Recommendation →
+                    </a>
+
+                    <a href="#dashboard" class="secondary-btn">
+                        Explore Dashboard
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+
+                <div class="weather-top">
+                    <span>Today's Farm Intelligence</span>
+                    <span>● LIVE</span>
+                </div>
+
+                <div class="temperature">
+                    28°
+                    <small>C</small>
+                </div>
+
+                <div class="weather-details">
+                    <div>
+                        <strong>65%</strong>
+                        <span>Humidity</span>
+                    </div>
+
+                    <div>
+                        <strong>82mm</strong>
+                        <span>Rainfall</span>
+                    </div>
+
+                    <div>
+                        <strong>Good</strong>
+                        <span>Crop Condition</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>🌾</span>
+                <div>
+                    <strong>4</strong>
+                    <small>Crop Recommendations</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>🌤️</span>
+                <div>
+                    <strong>28°C</strong>
+                    <small>Current Temperature</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>💧</span>
+                <div>
+                    <strong>65%</strong>
+                    <small>Humidity</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>📈</span>
+                <div>
+                    <strong>+8.4%</strong>
+                    <small>Market Trend</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CROP RECOMMENDATION -->
+        <section class="section" id="recommendation">
+
+            <div class="section-heading">
+                <span class="section-label">AI CROP INTELLIGENCE</span>
+                <h2>Find the right crop for your farm</h2>
+                <p>
+                    Enter your farm conditions and let KrishiSetu AI
+                    recommend suitable crops.
+                </p>
+            </div>
+
+
+            <div class="recommendation-layout">
+
+                <form id="cropForm" class="form-card">
+
+                    <div class="form-title">
+                        <div>
+                            <span class="mini-label">FARM ANALYSIS</span>
+                            <h3>Tell us about your farm</h3>
+                        </div>
+                        <span class="ai-icon">AI</span>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Soil Type</label>
+
+                            <select id="soilType" required>
+                                <option value="">Select soil</option>
+                                <option value="loamy">Loamy</option>
+                                <option value="clayey">Clayey</option>
+                                <option value="sandy">Sandy</option>
+                            </select>
+                        </div>
+
+
+                        <div class="input-group">
+                            <label>Season</label>
+
+                            <select id="season">
+                                <option value="Rabi">Rabi</option>
+                                <option value="Kharif">Kharif</option>
+                                <option value="Zaid">Zaid</option>
+                            </select>
+                        </div>
+
+
+                        <div class="input-group">
+                            <label>Temperature (°C)</label>
+
+                            <input
+                                id="temperature"
+                                type="number"
+                                placeholder="e.g. 25"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="input-group">
+                            <label>Rainfall (mm)</label>
+
+                            <input
+                                id="rainfall"
+                                type="number"
+                                placeholder="e.g. 100"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="input-group">
+                            <label>Humidity (%)</label>
+
+                            <input
+                                id="humidity"
+                                type="number"
+                                placeholder="e.g. 60"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="recommend-btn">
+                        ✨ Analyze My Farm
+                    </button>
+
+                </form>
+
+
+                <!-- RESULTS -->
+
+                <div class="results-card">
+
+                    <div class="results-header">
+                        <div>
+                            <span class="mini-label">AI OUTPUT</span>
+                            <h3>Recommended Crops</h3>
+                        </div>
+
+                        <span id="resultStatus" class="status">
+                            Waiting
+                        </span>
+                    </div>
+
+
+                    <div id="recommendationResults" class="results-empty">
+
+                        <div class="empty-icon">🌱</div>
+
+                        <h4>Your recommendations will appear here</h4>
+
+                        <p>
+                            Enter your farm conditions and click
+                            “Analyze My Farm”.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OTHER FEATURES -->
+
+        <section class="feature-section">
+
+            <div class="feature-card" id="health">
+
+                <div class="feature-icon">🩺</div>
+
+                <span class="section-label">CROP HEALTH</span>
+
+                <h3>Protect your crops</h3>
+
+                <p>
+                    AI-assisted crop health analysis can help identify
+                    potential problems and provide early guidance.
+                </p>
+
+                <button class="outline-btn">
+                    Check Crop Health →
+                </button>
+
+            </div>
+
+
+            <div class="feature-card" id="market">
+
+                <div class="feature-icon">📊</div>
+
+                <span class="section-label">MARKET INTELLIGENCE</span>
+
+                <h3>Know your market</h3>
+
+                <p>
+                    Understand market trends and make more informed
+                    decisions about when and where to sell.
+                </p>
+
+                <button class="outline-btn">
+                    View Market →
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤖</div>
+
+                <span class="section-label">AI ASSISTANT</span>
+
+                <h3>Ask your farming assistant</h3>
+
+                <p>
+                    Ask agricultural questions in simple language and
+                    receive easy-to-understand guidance.
+                </p>
+
+                <button class="outline-btn">
+                    Ask KrishiSetu →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            <strong>🌱 KrishiSetu AI</strong>
+            <span>Intelligence for a smarter agricultural future.</span>
+        </div>
+
+        <span>Hackathon Prototype • 2026</span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
